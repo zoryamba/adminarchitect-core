@@ -14,7 +14,7 @@
         "ext-dom": "*",
         "laravelcollective/html": "^5.0|^6.0|^7.0|dev-master",
         "doctrine/dbal": "^3.6",
-        "doctrine/annotations": "^1.6",
+        "doctrine/annotations": "^2.0",
         "terranet/menus": "^2.2",
         "terranet/presentable": "^1.0",
         "terranet/translatable": "^1.2",
