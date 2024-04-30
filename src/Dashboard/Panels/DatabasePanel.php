@@ -26,7 +26,8 @@ class DatabasePanel extends Panel
     protected function getDatabaseStats()
     {
         if (connection('mysql')) {
-            return $this->connection()->select($this->connection()->raw('SHOW TABLE STATUS'));
+            $query = $this->connection()->raw('SHOW TABLE STATUS')->getValue($this->connection()->getQueryGrammar());
+            return $this->connection()->select($query);
         }
 
         return collect([]);
