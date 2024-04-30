@@ -2,8 +2,7 @@
 
 namespace Terranet\Administrator\Providers;
 
-use Doctrine\Common\Annotations\AnnotationRegistry;
-use Doctrine\Common\Annotations\SimpleAnnotationReader;
+use Doctrine\Common\Annotations\AnnotationReader;
 use Doctrine\DBAL\Schema\AbstractSchemaManager;
 use Illuminate\Config\Repository as Config;
 use Illuminate\Foundation\Application;
@@ -36,12 +35,7 @@ class ContainersServiceProvider extends ServiceProvider
     protected function registerAdminAnnotations()
     {
         $this->app->singleton('scaffold.annotations', function () {
-            AnnotationRegistry::registerUniqueLoader('class_exists');
-
-            $reader = new SimpleAnnotationReader();
-            $reader->addNamespace('\\Terranet\\Administrator\\Annotations');
-
-            return $reader;
+            return new AnnotationReader();
         });
     }
 
