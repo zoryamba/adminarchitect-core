@@ -74,7 +74,7 @@ Route::post('{module}/{id}/media/{collection}', [
 
 // Upload media attachment
 Route::delete('{module}/{id}/media/{mediaId}', [
-    'as' => 'scaffold.attach_media',
+    'as' => 'scaffold.detach_media',
     'uses' => 'ScaffoldController@detachMedia',
 ])->where('module', $pattern);
 
